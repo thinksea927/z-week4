@@ -2,6 +2,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import NonSSRWrapper from "../components/NoSSRWrapper";
 import { ContractMessage } from "../components/Contract";
 
 const Home: NextPage = () => {
@@ -17,7 +18,9 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <ConnectButton />
-        <ContractMessage></ContractMessage>
+        <NonSSRWrapper>
+          <ContractMessage />
+        </NonSSRWrapper>
       </main>
     </div>
   );

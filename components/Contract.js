@@ -15,6 +15,7 @@ import {
 export function ContractMessage() {
   const { address } = useAccount();
   const [input, setInput] = useState();
+
   const { data } = useContractRead({
     address: contractAdd,
     abi: contractABI,
